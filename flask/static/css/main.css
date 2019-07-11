@@ -1,0 +1,9 @@
+body{
+    max-width: 800px;
+    margin: auto;
+    padding: 1em;
+    background: black;
+    color: #fff;
+    font: 16px/1.6 menlo, monospace;
+    text-align:center;
+}
