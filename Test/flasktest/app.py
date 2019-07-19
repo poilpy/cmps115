@@ -26,7 +26,7 @@ def hello_world():
         # tensor = get_tensor(image_bytes=image)
         # print(get_tensor(image_bytes=image))
         # return render_template('result.html', flower=flower_name, category=category)
-        return render_template('result.html#program', flower=resultClass)
+        return render_template('result.html', flower=resultClass)
 
 if __name__ == '__main__':
     app.run(debug=True)
