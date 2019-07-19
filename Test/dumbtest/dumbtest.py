@@ -39,8 +39,8 @@ class Net(nn.Module):
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # net = models.vgg16(pretrained=True).cuda()
-    net = Net().cuda()
-    # net = torch.load('saveModel').cuda()
+    # net = Net().cuda()
+    net = torch.load('saveModel.pth').cuda()
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
@@ -65,7 +65,7 @@ def main():
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
-    for epoch in range(2):  # loop over the dataset multiple times
+    for epoch in range(50):  # loop over the dataset multiple times
 
         running_loss = 0.0
         for i, data in enumerate(trainloader, 0):
@@ -94,7 +94,8 @@ def main():
     dataiter = iter(testloader)
     images, labels = dataiter.next()
 
-    torch.save(net, 'saveModel')
+    torch.save(net, 'saveModel.pth')
+    torch.save(net.state_dict(), 'saveModeldict.pth')
 
     # print images
     print('GroundTruth: ', ' '.join('%5s' % classes[labels[j]] for j in range(4)))
