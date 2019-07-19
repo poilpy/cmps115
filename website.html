@@ -31,15 +31,13 @@ body, html {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+	  <a href="https://github.com/poilpy/cmps115" onclick="w3_close()" class="w3-bar-item w3-button"> <i class="fa fa-github"></i> GitHub</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-	  <a href="https://github.com/poilpy/cmps115" onclick="w3_close()" class="w3-bar-item w3-button"> <i class="fa fa-github"></i> GitHub</a>
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-	  <a href="#" class="w3-bar-item w3-button"></i> EMPTY</a>
-      <a href="#" class="w3-bar-item w3-button"> EMPTY</a>
+      <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-book"></i> SUMMARY
+	  <a href="#app" class="w3-bar-item w3-button"></i><i class="fa fa-list"></i> APPLICATIONS</a>
+      <a href="#howto" class="w3-bar-item w3-button"><i class="fa fa-question-circle"></i> HOW TO</a>
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -52,11 +50,10 @@ body, html {
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+        <a href="#about" class="w3-bar-item w3-button">Summary
+	  <a href="#app" class="w3-bar-item w3-button"></i> Application</a>
+      <a href="#howto" class="w3-bar-item w3-button"> How To</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Team</a>
 </nav>
 
 <!-- Header with full-height image -->
@@ -73,7 +70,8 @@ body, html {
 </header>
 
 <!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
+<div class="w3-container" style="padding:75px 16px" id="about">
+  <br>
   <h3 class="w3-center">Image Segmentation</h3>
   <p class="w3-center w3-large">Can machines see the world around us?</p>
     <p class="w3-center w3-large">Until recently no one was sure exactly if it were possible to have a computer understand its surroundings. 
@@ -81,11 +79,28 @@ body, html {
 	One of these new advancements is computer vision. This field is rapidly optimizing the world around us overnight and has further 
 	applications beyond the scope of our current knowledge. From simple image processing to self driving cars, a whole new world is emerging. 
 	In this tutorial the basics of computer vision will be explained through the use of Image Segmentation.</p>
+	
+	</br>
+    <p class="w3-center w3-large"><p class="w3-center w3-large">So what exactly is Image Segmentation?</p>
+	<p style="text-align:center;">
+	  <img src="https://miro.medium.com/max/1200/1*SNvD04dEFIDwNAqSXLQC_g.jpeg" width="500px" alt="Logo">
+      <img src="https://thegradient.pub/content/images/2018/05/image7.png" width="470px" alt="Logo">
+	</p>
+	
+	
+    <p class="w3-center w3-large">To understand what image segmentation is, a natural place to start is with object detection. 
+	Object detection is a way of classifying images by what they consist of. A program developed for this purpose can generally detect the 
+	area of a feature within an image without any consideration of the exact attributes of the feature. 
+	Knowing an image has a certain object within it has limited uses and neglects to include the shape of the object. 
+	To gain more information about the pictures one must use Image Segmentation. As seen in the pictures above, 
+	image segmentation provides the exact pixel location of the object giving the user a lot of important and applicable information 
+	that has proven to have a massive impact. (See Below).</p>
+
 </div>
 
 <!-- Application of Segmenting Images -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
-  <h3 class="w3-center">Application of Segmenting Images</h3>
+<div class="w3-container w3-light-grey" style="padding:75px 16px" id="app">
+  <h3 class="w3-center">Applications of Segmenting Images</h3>
 
   <p class="w3-center w3-large">What is the purpose?</p>
 
@@ -93,42 +108,70 @@ body, html {
     <div class="w3-quarter">
       <i class="fa fa-car w3-margin-bottom w3-jumbo w3-center"></i>
       <p class="w3-large">Self-driving Cars</p>
-      <p>Fill In.</p>
+      <p>Through your windshield a typical view may consist of street lamps, traffic lights, other cars, pedestrians, barriers and 
+	  the sidewalk. The difference between all of these items is crucial, and an autonomous vehicle needs to understand them with a 
+	  very high accuracy. These segmentations help create an understanding of the world around the vehicle.
+	  </p>
     </div>
     <div class="w3-quarter">
       <i class="fa fa-ambulance w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large">Cancer Detection</p>
-      <p>Fill In.</p>
+      <p>Early detection of cancerous cells is vital in saving someone's life. In these life or death situations, humans may not be 
+	  qualified to look through every image of cells and make an accurate estimate of the state of a disease. By using Image 
+	  Segmentation on medical images, diseases may be found at early stages more accurately.
+</p>
     </div>
     <div class="w3-quarter">
-      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <i class="fa fa-users w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large">Social Media</p>
-      <p>Fill In.</p>
+      <p>Due to the presence of Image Segmentation, we are in the golden of targeted marketing. With collecting and utilizing all 
+	  the data presented on social media profiles, ads can finally be created to resonate more with the user. </p>
     </div>
     <div class="w3-quarter">
-      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <i class="fa fa-moon-o w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large">Astronomical Imaging</p>
-      <p>Fill In.</p>
+      <p>Images of astronomical objects are usually taken with electronic detectors such as a CCD (Charge Coupled Device). These 
+	  images are nearly always grayscale, but contain some color information. An astronomical image may be taken through a color 
+	  filter based on the data relevant to wavelengths and distance. This challenging task has been exponentially streamlined by 
+	  Image Segmentation.</p>
     </div>
   </div>
 </div>
 
-<div class="w3-container" style="padding:128px 16px" id="">
-  <h3 class="w3-center">Additional Resources</h3>
-  <p align="center">
-	<iframe width="888" height="500" src="https://www.youtube.com/embed/FmpDIaiMIeA" 
+<div class="w3-container" style="padding:75px 100px" id="howto">
+  <h3 class="w3-center">How does this work?</h3>
+  <br>
+	<iframe width="45%" height="300" style="position:relative" src="https://www.youtube.com/embed/FmpDIaiMIeA" 
 	frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </p>
+	<a href="https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf">
+      <img src="http://slideplayer.com/slide/8902510/26/images/1/Fully+Convolutional+Networks+for+Semantic+Segmentation.jpg" style="width:45%; height:300px; position:relative;
+      top:-150px;">
+   </a>
+   
+   <p class="w3-center w3-large" style= "position:relative; top:-100px;">Provided above are two instrumental resources that describe 
+   the foundations of Convolutional Neural Networks.These networks essentially convert a picture into a probability. What that means is, with the input of an image, 
+   the computer starts to break it down into sections. These sections all represent a probability of these pixels containing 
+   some feature. For example, in the segmented picture from above, the “blank” was at one point broken into pieces where if 
+   a “blank.feature” was in a section, then it would have a very high probability of being part of the whole “blank”, 
+   thus it would be colored accordingly. Initially, the network does not know the difference between these features nor what 
+   probability to associate the pixels with. To accomplish this, the model must be trained. By feeding the program example 
+   data (in this case pictures that already have the correct segmentations), the model can be tested and can learn. On the 
+   first pass the model can not differentiate between any of the characteristics of a photo. This data will then be measured 
+   in accuracy to determine how much the computer will have to adjust to create a more accurate model. After several iterations 
+   (called epochs) the model will continuously improve and become more and more accurate. If this is still confusing, don’t 
+   worry it is very dense material but the commented code below will help draw out every point made in the video, paper, 
+   and our analysis of each.</p>
+  
 </div>
 
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
+<div class="w3-container w3-light-grey" style="padding:75px 16px">
   <h3 class="w3-center">Programs</h3>
 
   
 </div>
 
 <!-- Team Section -->
-<div class="w3-container" style="padding:128px 16px" id="team">
+<div class="w3-container" style="padding:75px 16px" id="team">
   <h3 class="w3-center">THE TEAM</h3>
   <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
     <div class="w3-col l3 m6 w3-margin-bottom">
@@ -136,7 +179,6 @@ body, html {
         <div class="w3-container">
           <h3>Colin Murphy</h3>
           <p class="w3-opacity">Product Owner</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
         </div>
       </div>
     </div>
@@ -145,7 +187,6 @@ body, html {
         <div class="w3-container">
           <h3>Donnie Stewart</h3>
           <p class="w3-opacity">Scrum Master Week 1</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
         </div>
       </div>
     </div>
@@ -153,8 +194,7 @@ body, html {
       <div class="w3-card">
         <div class="w3-container">
           <h3>Thomas Ngo</h3>
-          <p class="w3-opacity">Scrum Master Week 1</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p class="w3-opacity">Scrum Master Week 2</p>
         </div>
       </div>
     </div>
@@ -162,8 +202,7 @@ body, html {
       <div class="w3-card">
         <div class="w3-container">
           <h3>Yifu Ding</h3>
-          <p class="w3-opacity">Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p class="w3-opacity">Scrum Master Week 3</p>
         </div>
       </div>
     </div>
@@ -183,35 +222,11 @@ body, html {
 </div>
 
 
-
-
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
-  <div style="margin-top:48px">
-    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
-    <br>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-black" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>
-  </div>
-</div>
-
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-github w3-hover-opacity"></i>
+	  <a href="https://github.com/poilpy/cmps115" onclick="w3_close()" class="w3-bar-item w3-button"> <i class="fa fa-github"></i></a>
   </div>
 </footer>
  
