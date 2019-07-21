@@ -42,7 +42,7 @@ def classify(img):
 
 def segment(img):
 	model = torch.load('segSaveModel.pth')
-	with open(img, 'rb') as f:
+	with open(img, encoding="utf8", errors='ignore') as f:
   		input_image = f.read()
 	# input_image = Image.open(img)
 	preprocess = transforms.Compose([
