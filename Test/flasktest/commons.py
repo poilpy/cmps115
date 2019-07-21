@@ -6,14 +6,6 @@ from torchvision import models
 from PIL import Image
 import torchvision.transforms as transforms
 
-def get_model():
-	checkpoint_path = 'saveModel'
-	model = models.vgg16(pretrained=True)
-	model.classifier = nn.Linear(2208, 102)
-	model.load_state_dict(torch.load(
-		checkpoint_path, map_location='cpu'), strict=False)
-	model.eval()
-	return model
 
 def get_tensor(image_bytes):
 	my_transforms = transforms.Compose([

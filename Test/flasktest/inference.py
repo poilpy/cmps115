@@ -28,7 +28,7 @@ classes = ('plane', 'car', 'bird', 'cat',
 def classify(img):
 	img = get_tensor(img).cuda()
 	net = torch.load('saveModel.pth')
-	outputs = net(img)
+	outputs = net(img).cuda()
 	_, predicted = torch.max(outputs.data, 1)
 	cool = classes[predicted[0]]
 

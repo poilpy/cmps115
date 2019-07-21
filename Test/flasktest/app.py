@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
 
@@ -22,11 +22,23 @@ def hello_world():
         image = file.read()
 
         resultClass = classify(image)
-        # get_flower_name(image_bytes=image)
-        # tensor = get_tensor(image_bytes=image)
-        # print(get_tensor(image_bytes=image))
-        # return render_template('result.html', flower=flower_name, category=category)
+        return redirect(url_for('getResult', resultClass=resultClass))
+        # return redirect(url_for('getResult'))
+
+@app.route('/result/<resultClass>', methods=['GET', 'POST'])
+def getResult(resultClass='beans'):
+    # get page
+    if request.method == 'GET':
         return render_template('result.html', flower=resultClass)
+    if request.method == 'POST':
+        return redirect(url_for('hello_world'))
+
+# @app.route('/results', methods=['POST'])
+# def coolbeans():
+
+#     # send image
+#     if request.method == 'POST':
+#         return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

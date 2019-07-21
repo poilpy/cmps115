@@ -38,9 +38,9 @@ class Net(nn.Module):
 
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    # net = models.vgg16(pretrained=True).cuda()
+    net = models.vgg16(pretrained=True).cuda()
     # net = Net().cuda()
-    net = torch.load('saveModel.pth').cuda()
+    # net = torch.load('saveModel.pth').cuda()
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
@@ -65,7 +65,7 @@ def main():
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
-    for epoch in range(50):  # loop over the dataset multiple times
+    for epoch in range(5):  # loop over the dataset multiple times
 
         running_loss = 0.0
         for i, data in enumerate(trainloader, 0):
