@@ -9,6 +9,13 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
+h7{
+    max-width: 800px;
+    margin: auto;
+    padding: 1em;
+    text-align:center;
+}
+
 body, html {
   height: 100%;
   line-height: 1.8;
@@ -114,7 +121,7 @@ img {
 <div class="w3-container w3-light-grey" style="padding:75px 16px" id="program">
         <h2>RESULT</h2>
 	    <p>Prediction: {{ flower}} </p>
-      <img src="{{ seg }}" alt="User Image">
+      <p><img src="{{ seg }}" alt="User Image"></p>
 		<a href="/#program"><button class="button" style="vertical-align:middle"><span>Run another image</span></button></a>
 
 </div>

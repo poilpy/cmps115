@@ -27,6 +27,13 @@ body, html {
   padding: 16px;
 }
 
+h7{
+    max-width: 800px;
+    margin: auto;
+    padding: 1em;
+    text-align:center;
+}
+
 input[type=file] {
   background-color: #4CAF50;
   color: white;
@@ -186,11 +193,16 @@ input[type=submit] {
 </div>
 
 <div class="w3-container w3-light-grey" style="padding:75px 16px" id="program">
-  <h3 class="w3-center">Program</h3>
-  <h2>Upload your image</h2>	
+  <h7><p><font size="10">Try it out!</font></p></h7>	
+  <h7><p>Our recognition supports: plane, car, bird, cat, deer, dog, frog, horse, ship, truck</p></h7>
+  <h7><p>Our segmentation supports: aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, diningtable,
+    dog, horse, motorbike, person, potted plant, sheep, sofa, train, tv/monitor</p></h7>
+  <h7><p><font size="6">Upload your jpg image here</font></p></h7>
+  <h7>
 		<form method ='post' enctype=multipart/form-data>
 			<input type="file" name="file" accept="image/jpeg" required>
-			<input type="submit" value="Upload" onclick="myFunction()"><p id="demo"></p>
+      <input type="submit" value="Upload" onclick="myFunction()"><p id="demo"></p>
+  </h7>
 </div>
 
 <!-- Team Section -->
