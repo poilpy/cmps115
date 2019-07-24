@@ -1,6 +1,6 @@
 import json
 
-from commons import get_tensor
+from commons import get_tensor, get_seg_tensor
 import torch
 
 from PIL import Image
@@ -41,7 +41,7 @@ def classify(img):
 
 
 def segment(img):
-	img = get_tensor(img).cuda()
+	img = get_seg_tensor(img).cuda()
 	model = torch.load('segSaveModel.pth')
 	# preprocess = transforms.Compose([
 	#     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
