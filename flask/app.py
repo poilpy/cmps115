@@ -1,5 +1,8 @@
 from flask import Flask, request, render_template, redirect, url_for
 import os
+from PIL import Image
+import io
+import torchvision.transforms as transforms
 
 photos_folder = os.path.join('static', 'photos')
 
@@ -35,9 +38,19 @@ def hello_world():
         print(request.files)
         if 'file' not in request.files:
             print('file not uploaded')
-            return
+            return redirect(url_for('hello_world'))
         file = request.files['file']
-        image = file.read()
+
+
+        file.save("static/photos/original.jpg")
+        # image = file.read()
+        # image = Image.open(io.BytesIO('static/photos/original.jpg'))
+        image = Image.open('static/photos/original.jpg')
+        my_transforms = transforms.Compose([
+        transforms.Resize(256)])
+        image = my_transforms(image)
+        image.save("static/photos/original.jpg")
+
 
         resultClass = classify(image)
         # resultClass = 'hello'
@@ -48,18 +61,20 @@ def hello_world():
         full_filename = os.path.join("/", app.config['UPLOAD_FOLDER'], 'file.jpg')
         # print(full_filename)
         # resultSeg.convert('RGB').save(full_filename)
-        resultSeg.convert('RGB').save("static/photos/coolbeans.jpg")
+        resultSeg.convert('RGB').save("static/photos/segmention.jpg")
+        # image.convert('RGB').save("static/photos/original.jpg")
         # resultSeg.save(full_filename)
 
-        return redirect(url_for('getResult', resultClass=resultClass, resultSeg='coolbeans.jpg'))
+        return redirect(url_for('getResult', resultClass=resultClass, resultSeg='segmention.jpg', original='original.jpg'))
 
-@app.route('/result/<resultClass>/<resultSeg>', methods=['GET', 'POST'])
-def getResult(resultClass='beans', resultSeg=os.path.join('/', app.config['UPLOAD_FOLDER'], 'donnie.jpg')):
+@app.route('/result/<resultClass>/<resultSeg>/<original>', methods=['GET', 'POST'])
+def getResult(resultClass='beans', resultSeg='donnie.jpg', original='original.jpg'):
     # get page
     if request.method == 'GET':
-        full_filename = os.path.join('/', app.config['UPLOAD_FOLDER'], resultSeg)
+        segFile = os.path.join('/', app.config['UPLOAD_FOLDER'], resultSeg)
+        originalFile = os.path.join('/', app.config['UPLOAD_FOLDER'], original)
         # full_filename = resultSeg
-        return render_template('result.html', flower=resultClass, seg=full_filename)
+        return render_template('result.html', flower=resultClass, seg=segFile, original=originalFile)
     if request.method == 'POST':
         return redirect(url_for('hello_world'))
 
