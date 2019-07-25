@@ -1,7 +1,7 @@
 # cmps115
-Image Segmentation website.
+This is a website that helps teach image segmenation with fully convolutional networks. Included in the website is a way to upload your own images and get back segmentations.
 
-Our program is written in python and html. In order to run our program on your machine, you will need to install following packages: 
+In order to run our program on your machine, you will need to install following packages: 
   
   flask
   
