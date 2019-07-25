@@ -20,9 +20,9 @@ def classify(img):
 	_, predicted = torch.max(outputs.data, 1)
 
 	# connect prediction result to corresponding class
-	cool = classes[predicted[0]]
+	result = classes[predicted[0]]
 
-	return cool
+	return result
 
 # Segmentation function, takes input image, segments through saved model, outputs colored image.
 def segment(img):
